@@ -1,4 +1,4 @@
-# Post-OCR Rules
+# Post-OCR Correction Rules
 
 [Polifonia Knowledge Extractor](https://github.com/polifonia-project/Polifonia-Knowledge-Extractor) entails a documents pre-processing step design for correcting major OCR errors. This repository includes the code implemented for this purpose. The code was written considering the outcomes of an in-depth analysis of the issues caused by the transformation of the historical documents available in PDF or image format into processable formats (plain text). We focused on those documents that we treated through the *ad hoc* OCR pipeline that we implemented for the [Polifonia Textual Corpus](https://github.com/polifonia-project/Polifonia-Corpus), released in the related [GitHub repository](https://github.com/polifonia-project/textual-corpus-population).
 
