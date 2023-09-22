@@ -2,7 +2,7 @@
 component-id: rulebased-postocr-corrector
 name: Rule-based Post-OCR Corrector
 description: Plain text files pre-processing script for correcting major OCR errors
-type: TBD
+type: Repository
 release-date: 05/07/2023
 release-number: v0.1
 work-package: 
@@ -16,7 +16,7 @@ credits:
 
 # Post-OCR Correction Rules
 
-[Polifonia Knowledge Extractor](https://github.com/polifonia-project/Polifonia-Knowledge-Extractor) entails a documents pre-processing step designed for correcting major OCR errors. This repository includes the code implemented for this purpose. The code was written considering the outcomes of a qualitative analysis of the issues caused by the transformation of the historical documents available in PDF or image format into processable formats (plain text). We focused on those documents that we treated through the *ad hoc* [OCR pipeline](https://github.com/polifonia-project/textual-corpus-population) that we implemented for the [Polifonia Textual Corpus](https://github.com/polifonia-project/Polifonia-Corpus).
+[Polifonia Knowledge Extractor](https://github.com/polifonia-project/Polifonia-Knowledge-Extractor) entails a document pre-processing step designed for correcting major OCR errors. This repository includes the code implemented for this purpose. The code was written considering the outcomes of a qualitative analysis of the issues caused by the transformation of the historical documents available in PDF or image format into processable formats (plain text). We focused on those documents that we treated through the *ad hoc* [OCR pipeline](https://github.com/polifonia-project/textual-corpus-population) that we implemented for the [Polifonia Textual Corpus](https://github.com/polifonia-project/Polifonia-Corpus).
 
 We reviewed the most prominent post-OCR correction approaches based on recent surveys. In parallel, we manually evaluated pairs of original images and OCRed texts. We first aimed to qualitatively identify macro-issues that could negatively impact the processing by the Text2AMR step of the [Polifonia Knowledge Extractor](https://github.com/polifonia-project/Polifonia-Knowledge-Extractor). As The input unit to the Text2AMR parsing step, as implemented in our pipeline, is the sentence, we paid specific attention to issues in source texts that impacted sentence cohesion. We noticed that periodicals' format peculiarities, such as the arrangement of text into two or more columns on a single page, systematically caused incorrect sentence break issues. Driven by the hypothesis that reconstructing sentence cohesion could enhance the output quality of our Text2AMR parsing step, we decided to implement a minimal rule-based strategy. This strategy, implemented as a regular expression-based substitution heuristics in a [Python script](https://github.com/arianna-graciotti/rulebased_postocr_corrector/blob/main/script/postocr_rulebased_corrector.py) released in this repository, supported the reconstruction of sentence cohesion while preserving source text paragraph breaks. 
 
